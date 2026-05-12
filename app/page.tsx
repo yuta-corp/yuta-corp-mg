@@ -1,19 +1,26 @@
-import { Button } from "@/components/ui/button"
+import { Hero, StatsStrip } from "@/components/hero"
+import { MarqueeBand } from "@/components/marquee-band"
+import { Studio } from "@/components/studio"
+import { Practice } from "@/components/practice"
+import { Works } from "@/components/works"
+import { SiteNav } from "@/components/site-nav"
+import { SiteFooter } from "@/components/site-footer"
+import { CountdownBanner } from "@/components/ui/the-future-arrives-soon-cta"
 
 export default function Page() {
   return (
-    <div className="flex min-h-svh p-6">
-      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 className="font-medium">Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We&apos;ve already added the button component for you.</p>
-          <Button className="mt-2">Button</Button>
-        </div>
-        <div className="font-mono text-xs text-muted-foreground">
-          (Press <kbd>d</kbd> to toggle dark mode)
-        </div>
-      </div>
-    </div>
+    <>
+      <SiteNav />
+      <main className="relative">
+        <Hero />
+        <StatsStrip />
+        <MarqueeBand />
+        <Studio />
+        <Practice />
+        <Works />
+        <CountdownBanner />
+      </main>
+      <SiteFooter />
+    </>
   )
 }
