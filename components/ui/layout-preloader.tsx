@@ -21,7 +21,7 @@ export function LayoutPreloader({
   className,
   duration = 1600,
   brand = "YUTA",
-  tagline = "On code · On dit · On tient",
+  tagline = "Build what matters",
 }: LayoutPreloaderProps) {
   const [visible, setVisible] = React.useState(true)
   const [progress, setProgress] = React.useState(0)
@@ -45,14 +45,17 @@ export function LayoutPreloader({
         <motion.div
           key="yuta-preloader"
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0, transition: { duration: 0.5, ease: [0.7, 0, 0.3, 1] } }}
+          exit={{
+            opacity: 0,
+            transition: { duration: 0.5, ease: [0.7, 0, 0.3, 1] },
+          }}
           className={cn(
             "fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden bg-background",
             className
           )}
         >
           {/* Big rotating dot field */}
-          <div className="yuta-grid pointer-events-none absolute inset-0 text-foreground/40 [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_75%)]" />
+          <div className="yuta-grid pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_75%)] text-foreground/40" />
 
           {/* Diagonal saffron wedge revealing as progress grows */}
           <motion.div
@@ -71,7 +74,7 @@ export function LayoutPreloader({
               transition={{ duration: 0.7, ease: [0.2, 0.7, 0.2, 1] }}
               className="relative"
             >
-              <span className="font-display text-[clamp(4rem,12vw,9rem)] font-extrabold leading-none tracking-[-0.04em] text-foreground">
+              <span className="font-display text-[clamp(4rem,12vw,9rem)] leading-none font-extrabold tracking-[-0.04em] text-foreground">
                 {brand}
                 <span className="text-blush">.</span>
               </span>
@@ -84,26 +87,26 @@ export function LayoutPreloader({
               />
             </motion.div>
 
-            <div className="flex items-center gap-3 font-mono text-[10.5px] uppercase tracking-[0.3em] text-foreground/70">
-              <span className="size-1.5 rounded-full bg-foreground animate-blink" />
+            <div className="flex items-center gap-3 font-mono text-[10.5px] tracking-[0.3em] text-foreground/70 uppercase">
+              <span className="animate-blink size-1.5 rounded-full bg-foreground" />
               <span>{tagline}</span>
-              <span className="tabular-nums text-foreground/40">
+              <span className="text-foreground/40 tabular-nums">
                 {String(Math.round(progress * 100)).padStart(3, "0")}
               </span>
             </div>
           </div>
 
           {/* Corner stamps */}
-          <span className="absolute top-5 left-5 font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/50">
+          <span className="absolute top-5 left-5 font-mono text-[10px] tracking-[0.3em] text-foreground/50 uppercase">
             MG · Antananarivo
           </span>
-          <span className="absolute top-5 right-5 font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/50">
+          <span className="absolute top-5 right-5 font-mono text-[10px] tracking-[0.3em] text-foreground/50 uppercase">
             Édition 2026
           </span>
-          <span className="absolute bottom-5 left-5 font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/50">
-            Studio · Logiciels
+          <span className="absolute bottom-5 left-5 font-mono text-[10px] tracking-[0.3em] text-foreground/50 uppercase">
+            Solo · Dev
           </span>
-          <span className="absolute bottom-5 right-5 font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/50">
+          <span className="absolute right-5 bottom-5 font-mono text-[10px] tracking-[0.3em] text-foreground/50 uppercase">
             Lat -18.879 · Lon 47.508
           </span>
         </motion.div>

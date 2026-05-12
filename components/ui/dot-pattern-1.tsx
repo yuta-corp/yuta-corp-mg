@@ -1,16 +1,19 @@
-import { useId, type SVGProps } from "react";
+import { useId, type SVGProps } from "react"
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
-interface DotPatternProps extends Omit<SVGProps<SVGSVGElement>, "x" | "y" | "width" | "height"> {
-  width?: number | string;
-  height?: number | string;
-  x?: number | string;
-  y?: number | string;
-  cx?: number | string;
-  cy?: number | string;
-  cr?: number | string;
-  className?: string;
+interface DotPatternProps extends Omit<
+  SVGProps<SVGSVGElement>,
+  "x" | "y" | "width" | "height"
+> {
+  width?: number | string
+  height?: number | string
+  x?: number | string
+  y?: number | string
+  cx?: number | string
+  cy?: number | string
+  cr?: number | string
+  className?: string
 }
 export function DotPattern({
   width = 24,
@@ -23,14 +26,14 @@ export function DotPattern({
   className,
   ...props
 }: DotPatternProps) {
-  const id = useId();
+  const id = useId()
 
   return (
     <svg
       aria-hidden="true"
       className={cn(
         "pointer-events-none absolute inset-0 h-full w-full fill-slate-500/50 md:fill-slate-500/70",
-        className,
+        className
       )}
       {...props}
     >
@@ -49,7 +52,7 @@ export function DotPattern({
       </defs>
       <rect width="100%" height="100%" strokeWidth={0} fill={`url(#${id})`} />
     </svg>
-  );
+  )
 }
 
-export default DotPattern;
+export default DotPattern

@@ -10,9 +10,9 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 const NAV_ITEMS = [
-  { label: "Studio", href: "#studio", num: "01" },
-  { label: "Pratique", href: "#pratique", num: "02" },
-  { label: "Travaux", href: "#travaux", num: "03" },
+  { label: "Manifesto", href: "#studio", num: "01" },
+  { label: "Services", href: "#pratique", num: "02" },
+  { label: "Projects", href: "#travaux", num: "03" },
   { label: "Contact", href: "#contact", num: "04" },
 ]
 
@@ -64,7 +64,7 @@ export function SiteNav() {
             <span className="font-display text-[19px] font-extrabold tracking-[-0.03em]">
               YUTA<span className="text-blush">.</span>
             </span>
-            <span className="mt-0.5 font-mono text-[9.5px] uppercase tracking-[0.28em] text-muted-foreground">
+            <span className="mt-0.5 font-mono text-[9.5px] tracking-[0.28em] text-muted-foreground uppercase">
               Corporation · MG
             </span>
           </div>
@@ -77,7 +77,7 @@ export function SiteNav() {
               href={item.href}
               className="group relative inline-flex items-baseline gap-1.5 rounded-full px-3 py-2 text-[13.5px] font-medium text-foreground/85 transition hover:text-foreground"
             >
-              <span className="font-mono text-[10px] tabular-nums text-foreground/45 transition group-hover:text-blush">
+              <span className="font-mono text-[10px] text-foreground/45 tabular-nums transition group-hover:text-blush">
                 {item.num}
               </span>
               <span>{item.label}</span>
@@ -93,7 +93,7 @@ export function SiteNav() {
           <Button
             variant="ghost"
             size="icon-sm"
-            aria-label="Basculer le thème"
+            aria-label="Toggle theme"
             onClick={() =>
               setTheme(resolvedTheme === "dark" ? "light" : "dark")
             }
@@ -114,7 +114,7 @@ export function SiteNav() {
             )}
           >
             <a href="#contact">
-              Un café ?
+              Let&apos;s talk
               <span aria-hidden className="ml-1">
                 →
               </span>

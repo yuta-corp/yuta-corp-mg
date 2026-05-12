@@ -8,47 +8,45 @@ const PRACTICES = [
   {
     num: "01",
     tone: "saffron",
-    title: "On fabrique\nle produit.",
-    body: "Du premier croquis griffonné au jour de la mise en ligne. Vous arrivez avec une idée, on repart avec un truc qui marche, qui tient la charge, qu'on peut vous expliquer.",
+    title: "Web &\nmobile.",
+    body: "From frontend to database — Next.js, React Native, Spring, PostgreSQL. Full-stack apps that actually work.",
     bullets: [
-      "Atelier de cadrage (gratuit)",
-      "Design produit + maquettes vivantes",
-      "Ingénierie full-stack",
-      "Mise en production & monitoring",
+      "Next.js & React (web)",
+      "React Native (mobile)",
+      "Spring & PostgreSQL (backend)",
+      "Docker & deployment",
     ],
     honest:
-      "Délai typique : 3 à 6 mois. Si on vous promet 4 semaines, on ment.",
-    cta: "Demander un cadrage",
+      "Timeline depends on complexity. I don't promise 2 weeks when I need 2 months.",
+    cta: "Tell me about your project",
   },
   {
     num: "02",
     tone: "mint",
-    title: "On range\nl'existant.",
-    body: "Vos équipes croulent sous les tableurs, les outils ne se parlent plus, le back-office est devenu un musée. On audite, on refond progressivement, on forme — pas de big bang.",
+    title: "Data &\nscraping.",
+    body: "Collect, analyze, automate. Python, pandas, and a bit of elbow grease.",
     bullets: [
-      "Audit lisible (pas une présentation de 80 slides)",
-      "Refonte par modules",
-      "Intégrations API / bases existantes",
-      "Formation interne incluse",
+      "Web scraping & data collection",
+      "Data analysis & BI",
+      "Python automation",
+      "Custom dashboards",
     ],
-    honest:
-      "On ne casse pas ce qui marche. Même si ça nous démange un peu.",
-    cta: "Faire l'audit",
+    honest: "Small to medium scale. I'm not training LLMs — yet.",
+    cta: "Let's talk data",
   },
   {
     num: "03",
     tone: "blush",
-    title: "On vous donne\nun avis.",
-    body: "Missions courtes, regard externe. Quand votre équipe technique hésite sur une stack, une archi, un recrutement — on vient écouter une journée et on dit ce qu'on en pense.",
+    title: "UI/UX &\nconsulting.",
+    body: "Need an outside opinion? Design, architecture, tech choices, or just a second pair of eyes.",
     bullets: [
-      "Revue d'architecture",
-      "Choix de stack ou de fournisseur",
-      "Accompagnement CTO part-time",
-      "Plan de remédiation chiffré",
+      "UI/UX design & wireframes",
+      "Tech stack advice",
+      "Architecture review",
+      "Project scoping",
     ],
-    honest:
-      "On dit notre avis honnête. Pas toujours celui que vous voulez entendre.",
-    cta: "Réserver une journée",
+    honest: "I say what I think — not always what you want to hear.",
+    cta: "Book a day",
   },
 ]
 
@@ -62,7 +60,7 @@ export function Practice() {
   return (
     <section id="pratique" className="relative bg-background py-28 md:py-36">
       <DotPattern
-        className="absolute inset-0 h-full w-full fill-foreground/10 [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_75%)]"
+        className="absolute inset-0 h-full w-full [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_75%)] fill-foreground/10"
         width={32}
         height={32}
         cr={0.6}
@@ -71,19 +69,18 @@ export function Practice() {
       <div className="relative mx-auto max-w-[1480px] px-6 md:px-10">
         <div className="grid items-end gap-10 md:grid-cols-12">
           <div className="md:col-span-5">
-            <div className="text-eyebrow">— 02 / Pratique</div>
-            <h2 className="mt-5 font-display text-[clamp(2.5rem,6.5vw,5rem)] font-extrabold leading-[0.94] tracking-[-0.035em]">
-              Trois manières
+            <div className="text-eyebrow">— 02 / Services</div>
+            <h2 className="mt-5 font-display text-[clamp(2.5rem,6.5vw,5rem)] leading-[0.94] font-extrabold tracking-[-0.035em]">
+              Three ways
               <br />
-              de <span className="italic">travailler</span>
+              to <span className="italic">work</span>
               <span className="text-blush">.</span>
             </h2>
           </div>
-          <p className="md:col-span-6 md:col-start-7 max-w-xl text-[16.5px] leading-relaxed text-foreground/80">
-            Pas de catalogue, pas de formules « starter / pro / enterprise ».
-            Chaque mission commence par une conversation et finit par un objet
-            qui marche. Voici les trois formes que ça prend, dit franchement,
-            avec les délais réels.
+          <p className="max-w-xl text-[16.5px] leading-relaxed text-foreground/80 md:col-span-6 md:col-start-7">
+            No catalog, no &ldquo;starter / pro / enterprise&rdquo; packages.
+            Every project starts with a conversation and ends with something
+            that works. Here&apos;s how it usually goes.
           </p>
         </div>
 
@@ -106,12 +103,12 @@ export function Practice() {
                   >
                     {p.num}
                   </span>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-muted-foreground">
-                    Pratique · {String(i + 1).padStart(2, "0")}
+                  <span className="font-mono text-[10px] tracking-[0.28em] text-muted-foreground uppercase">
+                    Services · {String(i + 1).padStart(2, "0")}
                   </span>
                 </header>
 
-                <h3 className="whitespace-pre-line font-display text-[34px] font-extrabold leading-[0.95] tracking-[-0.025em] md:text-[40px]">
+                <h3 className="font-display text-[34px] leading-[0.95] font-extrabold tracking-[-0.025em] whitespace-pre-line md:text-[40px]">
                   {p.title}
                 </h3>
 
@@ -143,16 +140,16 @@ export function Practice() {
                   toneBg[p.tone as keyof typeof toneBg]
                 )}
               >
-                <span className="font-semibold uppercase tracking-[0.18em]">
-                  Franchement →{" "}
+                <span className="font-semibold tracking-[0.18em] uppercase">
+                  Honestly →{" "}
                 </span>
                 {p.honest}
               </div>
 
               {/* Ink footer CTA — inside the card, no absolute overhang */}
               <div className="flex items-center justify-between gap-3 border-t-2 border-foreground bg-foreground px-6 py-4 text-background md:px-8">
-                <span className="font-mono text-[10.5px] uppercase tracking-[0.22em] text-background/65">
-                  Étape suivante
+                <span className="font-mono text-[10.5px] tracking-[0.22em] text-background/65 uppercase">
+                  Next step
                 </span>
                 <Button
                   asChild
@@ -175,27 +172,24 @@ export function Practice() {
         <div className="mt-24 rounded-2xl border-2 border-foreground bg-foreground p-8 text-background ring-saffron md:p-12">
           <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
             <div className="max-w-md">
-              <div className="font-mono text-[10.5px] uppercase tracking-[0.28em] text-saffron">
-                — Ce qu&apos;on ne fait pas
+              <div className="font-mono text-[10.5px] tracking-[0.28em] text-saffron uppercase">
+                — What I don&apos;t do
               </div>
-              <h3 className="mt-4 font-display text-[clamp(2rem,4vw,3.25rem)] font-extrabold leading-[0.95] tracking-[-0.03em]">
-                On vous dit non
+              <h3 className="mt-4 font-display text-[clamp(2rem,4vw,3.25rem)] leading-[0.95] font-extrabold tracking-[-0.03em]">
+                I say no
                 <br />
-                quand il faut.
+                when I have to.
               </h3>
             </div>
             <ul className="grid flex-1 grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2 md:max-w-xl">
               {[
-                "Sites vitrines à 100 €",
-                "Crypto / Web3 spéculatif",
-                "“Sous-traitance” cachée",
-                "Maquettes Figma sans code",
-                "Migrations en une nuit",
-                "Engagements verbaux",
+                "Advanced DevOps",
+                "Cybersecurity",
+                "Vague projects with no brief",
               ].map((x) => (
                 <li
                   key={x}
-                  className="flex items-baseline gap-2 font-mono text-[12.5px] uppercase tracking-[0.16em] text-background/80"
+                  className="flex items-baseline gap-2 font-mono text-[12.5px] tracking-[0.16em] text-background/80 uppercase"
                 >
                   <span className="text-saffron">✕</span> {x}
                 </li>

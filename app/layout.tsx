@@ -23,14 +23,14 @@ const fontDisplay = Bricolage_Grotesque({
 })
 
 export const metadata: Metadata = {
-  title: "YUTA Corporation — On code, on dit, on tient.",
+  title: "YUTA Corporation — Build what matters",
   description:
-    "YUTA Corporation. Studio malgache de logiciels. On construit, on parle franchement, on tient nos promesses. Antananarivo, Madagascar.",
+    "YUTA Corporation is a solo developer based in Antananarivo, Madagascar. Building projects that matter — PREDICTA, LAZA, and more.",
   metadataBase: new URL("https://yuta.mg"),
   openGraph: {
     title: "YUTA Corporation",
     description:
-      "Studio de logiciels à Madagascar — transparent, généreux, têtu.",
+      "Solo developer building projects that matter. Antananarivo, Madagascar.",
     type: "website",
   },
 }
@@ -42,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="fr"
+      lang="en"
       suppressHydrationWarning
       className={cn(
         "antialiased",

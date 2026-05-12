@@ -70,7 +70,7 @@ function TimeUnit({
           <AnimatedDigit value={value} />
         </span>
       </div>
-      <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-muted-foreground">
+      <span className="font-mono text-[10px] tracking-[0.28em] text-muted-foreground uppercase">
         {label}
       </span>
     </div>
@@ -78,15 +78,9 @@ function TimeUnit({
 }
 
 export function CountdownBanner() {
-  const [time, setTime] = useState<{
-    days: number
-    hours: number
-    minutes: number
-    seconds: number
-  } | null>(null)
+  const [time, setTime] = useState(getTimeLeft)
 
   useEffect(() => {
-    setTime(getTimeLeft())
     const interval = setInterval(() => setTime(getTimeLeft()), 1000)
     return () => clearInterval(interval)
   }, [])
@@ -96,7 +90,7 @@ export function CountdownBanner() {
   return (
     <section className="relative isolate flex w-full items-center justify-center overflow-hidden bg-background px-4 py-28 md:py-36">
       {/* Sober backdrop: hairline grid + soft saffron wash */}
-      <div className="yuta-grid pointer-events-none absolute inset-0 opacity-50 [mask-image:radial-gradient(ellipse_at_center,black_25%,transparent_70%)]" />
+      <div className="yuta-grid pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black_25%,transparent_70%)] opacity-50" />
       <div
         aria-hidden
         className="pointer-events-none absolute -top-40 left-1/2 size-[640px] -translate-x-1/2 rounded-full bg-saffron/[0.06] blur-3xl"
@@ -120,7 +114,7 @@ export function CountdownBanner() {
                 c === "tl" && "top-4 left-4 border-t border-l",
                 c === "tr" && "top-4 right-4 border-t border-r",
                 c === "bl" && "bottom-4 left-4 border-b border-l",
-                c === "br" && "bottom-4 right-4 border-b border-r"
+                c === "br" && "right-4 bottom-4 border-r border-b"
               )}
             />
           ))}
@@ -129,37 +123,42 @@ export function CountdownBanner() {
             <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/40 px-3 py-1.5">
               <span className="relative inline-flex size-2 items-center justify-center">
                 <span className="absolute size-2 rounded-full bg-saffron/30" />
-                <span className="size-1.5 rounded-full bg-saffron animate-blink" />
+                <span className="animate-blink size-1.5 rounded-full bg-saffron" />
               </span>
-              <span className="font-mono text-[10.5px] uppercase tracking-[0.24em] text-foreground/80">
-                Mise en ligne — bientôt
+              <span className="font-mono text-[10.5px] tracking-[0.24em] text-foreground/80 uppercase">
+                Coming soon
               </span>
             </div>
 
             <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-[-0.02em] text-balance text-foreground">
-              Le studio ouvre ses portes
+              PREDICTA &amp; LAZA
               <br />
-              <span className="italic">d&apos;ici peu</span>
+              <span className="italic">launching in</span>
               <span className="text-saffron">.</span>
             </h2>
 
             <p className="max-w-xl text-[15.5px] leading-relaxed text-muted-foreground">
-              Nous prenons quelques clients par an. Pour faire partie de la
-              prochaine cohorte, laissez-nous votre adresse — nous reviendrons
-              vers vous avant l&apos;ouverture.
+              Two projects. One goal: build something that matters. Leave your
+              email and I&apos;ll notify you when they&apos;re live.
             </p>
           </div>
 
           <div className="flex items-center gap-3 md:gap-6">
-            <TimeUnit value={time?.days ?? 0} label="Jours" highlight />
-            <span aria-hidden className="font-display text-3xl text-foreground/30 md:text-5xl">
+            <TimeUnit value={time?.days ?? 0} label="Days" highlight />
+            <span
+              aria-hidden
+              className="font-display text-3xl text-foreground/30 md:text-5xl"
+            >
               ·
             </span>
-            <TimeUnit value={time?.hours ?? 0} label="Heures" />
-            <span aria-hidden className="font-display text-3xl text-foreground/30 md:text-5xl">
+            <TimeUnit value={time?.hours ?? 0} label="Hours" />
+            <span
+              aria-hidden
+              className="font-display text-3xl text-foreground/30 md:text-5xl"
+            >
               ·
             </span>
-            <TimeUnit value={time?.minutes ?? 0} label="Minutes" />
+            <TimeUnit value={time?.minutes ?? 0} label="Mins" />
             <span
               aria-hidden
               className="hidden font-display text-3xl text-foreground/30 sm:inline md:text-5xl"
@@ -167,7 +166,7 @@ export function CountdownBanner() {
               ·
             </span>
             <div className="hidden sm:block">
-              <TimeUnit value={time?.seconds ?? 0} label="Secondes" />
+              <TimeUnit value={time?.seconds ?? 0} label="Secs" />
             </div>
           </div>
 
@@ -183,10 +182,10 @@ export function CountdownBanner() {
               <input
                 type="email"
                 required
-                placeholder="vous@entreprise.mg"
+                placeholder="your@email.com"
                 className={cn(
                   "h-12 w-full rounded-full border border-border/70 bg-background/60 pr-4 pl-11 text-[14px] text-foreground placeholder:text-muted-foreground/70",
-                  "outline-none transition focus:border-saffron/60 focus:ring-2 focus:ring-saffron/20"
+                  "transition outline-none focus:border-saffron/60 focus:ring-2 focus:ring-saffron/20"
                 )}
               />
             </label>
@@ -194,13 +193,13 @@ export function CountdownBanner() {
               type="submit"
               className="inline-flex h-12 items-center justify-center gap-1.5 rounded-full bg-foreground px-6 text-[13px] font-medium text-background transition hover:bg-foreground/85"
             >
-              Me prévenir
+              Notify me
               <ArrowRight className="size-3.5" />
             </button>
           </form>
 
-          <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
-            Pas de spam — un seul message, le jour de l&apos;ouverture.
+          <p className="font-mono text-[10px] tracking-[0.22em] text-muted-foreground uppercase">
+            No spam — just a heads-up when it&apos;s ready.
           </p>
         </motion.div>
       </div>

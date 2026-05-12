@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import {
   interpolate,
@@ -6,20 +6,20 @@ import {
   spring,
   useCurrentFrame,
   useVideoConfig,
-} from "remotion";
+} from "remotion"
 
 export interface MarkerHighlightProps {
-  before?: string;
-  highlight: string;
-  after?: string;
-  markerColor?: string;
-  baseColor?: string;
-  highlightedTextColor?: string;
-  backgroundColor?: string;
-  fontSize?: number;
-  fontWeight?: number;
-  speed?: number;
-  className?: string;
+  before?: string
+  highlight: string
+  after?: string
+  markerColor?: string
+  baseColor?: string
+  highlightedTextColor?: string
+  backgroundColor?: string
+  fontSize?: number
+  fontWeight?: number
+  speed?: number
+  className?: string
 }
 
 export function MarkerHighlight({
@@ -35,14 +35,14 @@ export function MarkerHighlight({
   speed = 1,
   className,
 }: MarkerHighlightProps) {
-  const frame = useCurrentFrame() * speed;
-  const { fps } = useVideoConfig();
+  const frame = useCurrentFrame() * speed
+  const { fps } = useVideoConfig()
 
   const markerScale = spring({
     frame: frame - 15,
     fps,
     config: { damping: 14 },
-  });
+  })
 
   const textColor = interpolateColors(
     interpolate(markerScale, [0.5, 0.8], [0, 1], {
@@ -50,8 +50,8 @@ export function MarkerHighlight({
       extrapolateRight: "clamp",
     }),
     [0, 1],
-    [baseColor, highlightedTextColor],
-  );
+    [baseColor, highlightedTextColor]
+  )
 
   return (
     <div
@@ -95,5 +95,5 @@ export function MarkerHighlight({
         {after}
       </span>
     </div>
-  );
+  )
 }

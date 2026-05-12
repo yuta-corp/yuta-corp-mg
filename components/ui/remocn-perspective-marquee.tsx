@@ -1,24 +1,24 @@
-"use client";
+"use client"
 
-import { useCurrentFrame } from "remotion";
+import { useCurrentFrame } from "remotion"
 
 export interface PerspectiveMarqueeProps {
-  items?: string[];
-  fontSize?: number;
-  color?: string;
-  fontWeight?: number;
-  pixelsPerFrame?: number;
-  rotateY?: number;
-  rotateX?: number;
-  perspective?: number;
-  fadeColor?: string;
-  background?: string;
-  speed?: number;
-  className?: string;
+  items?: string[]
+  fontSize?: number
+  color?: string
+  fontWeight?: number
+  pixelsPerFrame?: number
+  rotateY?: number
+  rotateX?: number
+  perspective?: number
+  fadeColor?: string
+  background?: string
+  speed?: number
+  className?: string
 }
 
 const FONT_FAMILY =
-  "var(--font-geist-sans), -apple-system, BlinkMacSystemFont, sans-serif";
+  "var(--font-geist-sans), -apple-system, BlinkMacSystemFont, sans-serif"
 
 const DEFAULT_ITEMS = [
   "Vercel",
@@ -29,7 +29,7 @@ const DEFAULT_ITEMS = [
   "Raycast",
   "Arc",
   "Cursor",
-];
+]
 
 export function PerspectiveMarquee({
   items = DEFAULT_ITEMS,
@@ -45,16 +45,16 @@ export function PerspectiveMarquee({
   speed = 1,
   className,
 }: PerspectiveMarqueeProps) {
-  const frame = useCurrentFrame() * speed;
+  const frame = useCurrentFrame() * speed
 
-  const itemPadding = fontSize * 0.9;
+  const itemPadding = fontSize * 0.9
   const approxItemWidth = items.reduce(
     (acc, item) => acc + item.length * fontSize * 0.6 + itemPadding,
-    0,
-  );
+    0
+  )
 
-  const offset = -((frame * pixelsPerFrame) % approxItemWidth);
-  const rendered = [...items, ...items, ...items];
+  const offset = -((frame * pixelsPerFrame) % approxItemWidth)
+  const rendered = [...items, ...items, ...items]
 
   return (
     <div
@@ -91,11 +91,11 @@ export function PerspectiveMarquee({
             const itemCenter =
               i * (approxItemWidth / items.length) +
               approxItemWidth / items.length / 2 +
-              offset;
-            const norm = (itemCenter - 640) / 640;
-            const distance = Math.min(1, Math.abs(norm));
-            const blurPx = distance * 6;
-            const opacity = 1 - distance * 0.4;
+              offset
+            const norm = (itemCenter - 640) / 640
+            const distance = Math.min(1, Math.abs(norm))
+            const blurPx = distance * 6
+            const opacity = 1 - distance * 0.4
 
             return (
               <span
@@ -114,7 +114,7 @@ export function PerspectiveMarquee({
               >
                 {item}
               </span>
-            );
+            )
           })}
         </div>
       </div>
@@ -136,5 +136,5 @@ export function PerspectiveMarquee({
         }}
       />
     </div>
-  );
+  )
 }
