@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { ArrowUpRight } from "lucide-react"
 
 const WORKS = [
@@ -62,11 +63,20 @@ export function Works() {
               <span className="col-span-2 font-mono text-[12.5px] text-foreground/60 tabular-nums md:col-span-1">
                 /{String(i + 1).padStart(2, "0")}
               </span>
-              <span className="col-span-3 font-mono text-[12.5px] text-foreground/60 tabular-nums md:col-span-1">
-                {w.year}
+              <span className="col-span-3 flex flex-col items-start gap-2 md:col-span-1">
+                <span className="font-mono text-[12.5px] text-foreground/60 tabular-nums">
+                  {w.year}
+                </span>
+                <Image
+                  src={`/${w.client}.png`}
+                  alt={`${w.client} logo`}
+                  width={48}
+                  height={48}
+                  className="size-10 rounded-full border-2 border-foreground/30 object-cover md:size-12"
+                />
               </span>
               <span className="col-span-7 md:col-span-6">
-                <span className="block font-mono text-[11px] tracking-[0.22em] text-foreground/55 uppercase">
+                <span className="font-mono text-[11px] tracking-[0.22em] text-foreground/55 uppercase">
                   {w.client}
                 </span>
                 <span className="block font-display text-[22px] leading-snug font-bold tracking-tight md:text-[28px]">
