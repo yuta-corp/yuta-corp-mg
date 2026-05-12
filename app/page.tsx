@@ -1,5 +1,4 @@
 import { Hero, StatsStrip } from "@/components/hero"
-import { MarqueeBand } from "@/components/marquee-band"
 import { Studio } from "@/components/studio"
 import { Practice } from "@/components/practice"
 import { Works } from "@/components/works"
@@ -14,7 +13,6 @@ export default function Page() {
       <main className="relative">
         <Hero />
         <StatsStrip />
-        <MarqueeBand />
         <Studio />
         <Practice />
         <Works />
