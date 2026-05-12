@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "motion/react"
-import { ArrowRight, Mail } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
@@ -137,9 +136,8 @@ export function CountdownBanner() {
               <span className="text-saffron">.</span>
             </h2>
 
-            <p className="max-w-xl text-[15.5px] leading-relaxed text-muted-foreground">
-              Two projects. One goal: build something that matters. Leave your
-              email and I&apos;ll notify you when they&apos;re live.
+            <p className="max-w-lg text-[15.5px] leading-relaxed text-muted-foreground">
+              Two projects. One goal: build something that matters.
             </p>
           </div>
 
@@ -169,38 +167,6 @@ export function CountdownBanner() {
               <TimeUnit value={time?.seconds ?? 0} label="Secs" />
             </div>
           </div>
-
-          <form
-            className="flex w-full max-w-md flex-col items-stretch gap-3 sm:flex-row"
-            onSubmit={(e) => e.preventDefault()}
-          >
-            <label className="relative flex-1">
-              <Mail
-                aria-hidden
-                className="pointer-events-none absolute top-1/2 left-4 size-4 -translate-y-1/2 text-muted-foreground"
-              />
-              <input
-                type="email"
-                required
-                placeholder="your@email.com"
-                className={cn(
-                  "h-12 w-full rounded-full border border-border/70 bg-background/60 pr-4 pl-11 text-[14px] text-foreground placeholder:text-muted-foreground/70",
-                  "transition outline-none focus:border-saffron/60 focus:ring-2 focus:ring-saffron/20"
-                )}
-              />
-            </label>
-            <button
-              type="submit"
-              className="inline-flex h-12 items-center justify-center gap-1.5 rounded-full bg-foreground px-6 text-[13px] font-medium text-background transition hover:bg-foreground/85"
-            >
-              Notify me
-              <ArrowRight className="size-3.5" />
-            </button>
-          </form>
-
-          <p className="font-mono text-[10px] tracking-[0.22em] text-muted-foreground uppercase">
-            No spam — just a heads-up when it&apos;s ready.
-          </p>
         </motion.div>
       </div>
     </section>

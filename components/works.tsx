@@ -63,16 +63,16 @@ export function Works() {
               <span className="col-span-2 font-mono text-[12.5px] text-foreground/60 tabular-nums md:col-span-1">
                 /{String(i + 1).padStart(2, "0")}
               </span>
-              <span className="col-span-3 flex flex-col items-start gap-2 md:col-span-1">
+              <span className="col-span-3 flex flex-col items-start gap-3 md:col-span-1">
                 <span className="font-mono text-[12.5px] text-foreground/60 tabular-nums">
                   {w.year}
                 </span>
                 <Image
                   src={`/${w.client}.png`}
                   alt={`${w.client} logo`}
-                  width={48}
-                  height={48}
-                  className="size-10 rounded-full border-2 border-foreground/30 object-cover md:size-12"
+                  width={96}
+                  height={96}
+                  className="size-16 rounded-2xl border-2 border-foreground/30 object-cover md:size-24"
                 />
               </span>
               <span className="col-span-7 md:col-span-6">
