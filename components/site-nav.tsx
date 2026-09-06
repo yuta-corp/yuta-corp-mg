@@ -13,7 +13,8 @@ const NAV_ITEMS = [
   { label: "Manifesto", href: "#studio", num: "01" },
   { label: "Services", href: "#pratique", num: "02" },
   { label: "Projects", href: "#travaux", num: "03" },
-  { label: "Contact", href: "#contact", num: "04" },
+  { label: "Founder", href: "#fondateur", num: "04" },
+  { label: "Contact", href: "#contact", num: "05" },
 ]
 
 export function SiteNav() {

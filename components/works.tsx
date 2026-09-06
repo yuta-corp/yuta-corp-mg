@@ -5,12 +5,26 @@ const WORKS = [
   {
     year: "2026",
     client: "PREDICTA",
-    discipline: "Data · Python",
+    discipline: "Traffic · Realtime",
     title:
-      "Traffic prediction for Antananarivo using real data collection and analysis.",
-    tag: "Data phase",
+      "Live traffic for Antananarivo — every road colored by its current congestion, in real time.",
+    tag: "MVP live",
     tone: "saffron",
-    note: "Data collection in progress — reliable data takes time.",
+    note: "Live now. Data analysis & the prediction algorithm are the next milestones.",
+    links: [
+      {
+        label: "Live map",
+        href: "https://predicta-ui.vercel.app/",
+      },
+      {
+        label: "UI repo",
+        href: "https://github.com/yuta-corp/predicta-ui",
+      },
+      {
+        label: "API repo",
+        href: "https://github.com/Tiavina-Andriamamivony/predictaapi",
+      },
+    ],
   },
   {
     year: "2026",
@@ -20,6 +34,7 @@ const WORKS = [
     tag: "In development",
     tone: "mint",
     note: "Building in private for now.",
+    links: [],
   },
 ]
 
@@ -55,9 +70,8 @@ export function Works() {
 
         <div className="mt-14 overflow-hidden rounded-2xl border-2 border-foreground bg-card">
           {WORKS.map((w, i) => (
-            <a
-              key={i}
-              href="#contact"
+            <div
+              key={w.client}
               className={`group grid grid-cols-12 items-baseline gap-4 border-foreground px-6 py-7 transition-colors hover:bg-saffron md:gap-6 md:px-10 md:py-9 ${i > 0 ? "border-t-2" : ""}`}
             >
               <span className="col-span-2 font-mono text-[12.5px] text-foreground/60 tabular-nums md:col-span-1">
@@ -85,6 +99,22 @@ export function Works() {
                 <span className="mt-1 block text-[13px] leading-snug text-foreground/65 italic">
                   ↳ {w.note}
                 </span>
+                {w.links.length > 0 && (
+                  <span className="mt-4 flex flex-wrap items-center gap-2">
+                    {w.links.map((l) => (
+                      <a
+                        key={l.href}
+                        href={l.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1 rounded-full border-2 border-foreground/60 bg-background px-2.5 py-1 font-mono text-[10px] font-semibold tracking-[0.14em] text-foreground uppercase transition hover:border-foreground hover:bg-saffron"
+                      >
+                        {l.label}
+                        <ArrowUpRight className="size-3" />
+                      </a>
+                    ))}
+                  </span>
+                )}
               </span>
               <span className="col-span-12 mt-3 flex items-center justify-between gap-3 md:col-span-4 md:mt-0 md:justify-end">
                 <span className="hidden font-mono text-[10.5px] tracking-[0.22em] text-foreground/60 uppercase md:inline">
@@ -99,7 +129,7 @@ export function Works() {
                 </span>
                 <ArrowUpRight className="size-4 shrink-0 -translate-x-1 transition group-hover:translate-x-0" />
               </span>
-            </a>
+            </div>
           ))}
         </div>
 
