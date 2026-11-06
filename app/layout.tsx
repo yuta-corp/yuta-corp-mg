@@ -25,12 +25,12 @@ const fontDisplay = Bricolage_Grotesque({
 export const metadata: Metadata = {
   title: "YUTA Corporation — Build what matters",
   description:
-    "YUTA Corporation is a solo developer based in Antananarivo, Madagascar. Building projects that matter — PREDICTA (live traffic MVP for Tana), LAZA, and more.",
+    "YUTA Corporation is a solo developer based in Antananarivo, Madagascar. Building projects that matter — MINDRA (the AI tutor that adapts to you, live in production), and more.",
   metadataBase: new URL("https://yuta.mg"),
   openGraph: {
     title: "YUTA Corporation",
     description:
-      "Solo developer building projects that matter. PREDICTA MVP live — real-time traffic for Antananarivo. Antananarivo, Madagascar.",
+      "Solo developer building projects that matter. MINDRA is live — the AI tutor that adapts to every learner. Antananarivo, Madagascar.",
     type: "website",
   },
 }

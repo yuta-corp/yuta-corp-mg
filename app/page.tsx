@@ -3,7 +3,7 @@ import { Studio } from "@/components/studio"
 import { Practice } from "@/components/practice"
 import { Works } from "@/components/works"
 import { Founder } from "@/components/founder"
-import { PredictaCta } from "@/components/predicta-cta"
+import { MindraCta } from "@/components/mindra-cta"
 import { SiteNav } from "@/components/site-nav"
 import { SiteFooter } from "@/components/site-footer"
 
@@ -18,7 +18,7 @@ export default function Page() {
         <Practice />
         <Works />
         <Founder />
-        <PredictaCta />
+        <MindraCta />
       </main>
       <SiteFooter />
     </>

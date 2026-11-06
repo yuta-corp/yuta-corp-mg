@@ -4,37 +4,23 @@ import { ArrowUpRight } from "lucide-react"
 const WORKS = [
   {
     year: "2026",
-    client: "PREDICTA",
-    discipline: "Traffic · Realtime",
+    client: "MINDRA",
+    discipline: "EdTech · AI",
     title:
-      "Live traffic for Antananarivo — every road colored by its current congestion, in real time.",
-    tag: "MVP live",
+      "The AI tutor that adapts to you — professors who remember, teach your way, and measure what you master.",
+    tag: "Live in production",
     tone: "saffron",
-    note: "Live now. Data analysis & the prediction algorithm are the next milestones.",
+    note: "Live now. Mindra Mentors — the human marketplace — is the next milestone.",
     links: [
       {
-        label: "Live map",
-        href: "https://predicta-ui.vercel.app/",
+        label: "Open the app",
+        href: "https://mindra-khaki.vercel.app/",
       },
       {
-        label: "UI repo",
-        href: "https://github.com/yuta-corp/predicta-ui",
-      },
-      {
-        label: "API repo",
-        href: "https://github.com/Tiavina-Andriamamivony/predictaapi",
+        label: "Full demo (~11 min)",
+        href: "https://youtu.be/ZSAykISzvuI",
       },
     ],
-  },
-  {
-    year: "2026",
-    client: "LAZA",
-    discipline: "Web platform",
-    title: "Anonymous corruption reporting platform for Madagascar.",
-    tag: "In development",
-    tone: "mint",
-    note: "Building in private for now.",
-    links: [],
   },
 ]
 

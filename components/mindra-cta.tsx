@@ -1,9 +1,12 @@
-import { ArrowUpRight, GitFork } from "lucide-react"
+import { ArrowUpRight } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
-export function PredictaCta() {
+const MINDRA_DEMO_URL = "https://youtu.be/ZSAykISzvuI"
+const MINDRA_EMBED_URL = "https://www.youtube-nocookie.com/embed/ZSAykISzvuI"
+
+export function MindraCta() {
   return (
     <section className="relative isolate flex w-full items-center justify-center overflow-hidden bg-background px-4 py-28 md:py-36">
       {/* Sober backdrop: hairline grid + soft saffron wash */}
@@ -34,23 +37,47 @@ export function PredictaCta() {
             <div className="inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-saffron px-3 py-1.5">
               <span className="animate-blink size-1.5 rounded-full bg-foreground" />
               <span className="font-mono text-[10.5px] font-semibold tracking-[0.24em] text-foreground uppercase">
-                PREDICTA — MVP live
+                MINDRA — Live in production
               </span>
             </div>
 
             <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-[-0.02em] text-balance text-foreground">
-              See Tana&apos;s traffic
+              Meet the tutor that
               <br />
-              <span className="italic">in real time</span>
+              <span className="italic">adapts to you</span>
               <span className="text-saffron">.</span>
             </h2>
 
             <p className="max-w-xl text-[15.5px] leading-relaxed text-muted-foreground">
-              The Predicta MVP is out: every road of Antananarivo on a live map,
-              colored by its current congestion. Real traffic, never stored.
-              Data analysis &amp; the prediction algorithm are the next
-              milestones — coming little by little.
+              Mindra is out: your own AI professors who remember you, explain
+              things your way, quiz you, and measure what you actually master —
+              available 24/7, at a price no private tutor can match. When you
+              need a human, Mindra Mentors takes over.
             </p>
+          </div>
+
+          {/* Demo video */}
+          <div className="w-full max-w-3xl">
+            <div className="relative aspect-video w-full overflow-hidden rounded-xl border-2 border-foreground bg-background shadow-[6px_6px_0_0_var(--saffron)]">
+              <iframe
+                className="absolute inset-0 h-full w-full"
+                src={MINDRA_EMBED_URL}
+                title="Mindra — the AI tutor that adapts to you (full demo)"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+            <a
+              href={MINDRA_DEMO_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 inline-flex items-center gap-2 font-mono text-[10.5px] tracking-[0.24em] text-muted-foreground uppercase transition hover:text-foreground"
+            >
+              Watch the full demo on YouTube — ~11 min
+              <ArrowUpRight className="size-3" />
+            </a>
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-3">
@@ -63,36 +90,18 @@ export function PredictaCta() {
               )}
             >
               <a
-                href="https://predicta-ui.vercel.app/"
+                href="https://mindra-khaki.vercel.app/"
                 target="_blank"
                 rel="noreferrer"
               >
-                Open the live map
+                Open Mindra
                 <ArrowUpRight className="ml-1 size-4" />
-              </a>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className={cn(
-                "h-12 rounded-full border-2 border-foreground bg-background px-6 text-base text-foreground hover:bg-saffron",
-                "shadow-[4px_4px_0_0_var(--ink)]"
-              )}
-            >
-              <a
-                href="https://github.com/yuta-corp/predicta-ui"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <GitFork className="mr-1 size-4" />
-                Source on GitHub
               </a>
             </Button>
           </div>
 
           <p className="font-mono text-[10.5px] tracking-[0.24em] text-muted-foreground uppercase">
-            LAZA — still in development, in private.
+            Mindra Mentors — the human side, modeled & coming next.
           </p>
         </div>
       </div>

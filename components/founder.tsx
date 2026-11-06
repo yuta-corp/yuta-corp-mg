@@ -32,8 +32,8 @@ export function Founder() {
               YUTA isn&apos;t a team. It&apos;s Tiavina Andriamamivony — a
               backend &amp; full-stack engineer based in Antananarivo who builds
               each project end to end: the idea, the design, the code, the
-              infra. Creator of PREDICTA, Java/Spring Boot by trade, picoCTF
-              2026 (CMU Africa) with the best team in Madagascar.
+              infra. Creator of Mindra, Java/Spring Boot by trade, picoCTF 2026
+              (CMU Africa) with the best team in Madagascar.
             </p>
             <p className="mt-4 max-w-2xl text-[15.5px] leading-relaxed text-foreground/70">
               If you want to know who&apos;s really behind the code — his
